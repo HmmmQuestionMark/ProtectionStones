@@ -119,16 +119,20 @@ public class ListenerClass implements Listener
 					BlockVector min = v1.toBlockVector();
 					BlockVector max = v2.toBlockVector();
 //					String id = "ps" + (int)bx + "x" + (int)by + "y" + (int)bz + "z";
+// Just get the player name and put _1 behind
 					String id = p.getName() + "_1";
 
 					RegionManager rgm = wg.getRegionManager(p.getWorld());
 					ProtectedRegion region = new ProtectedCuboidRegion(id, min, max);
+					region.getOwners().addPlayer(p.getUniqueId()); // We force using UUID instead of player name
+	
+/*					We don't need this stuff.
+					region.getOwners().addPlayer(p.getName());
+					if(Main.uuid)
+					{
 					region.getOwners().addPlayer(p.getUniqueId());
-//					region.getOwners().addPlayer(p.getName());
-//					if(Main.uuid)
-//					{
-
-//					}
+					}
+*/
 					rgm.addRegion(region);
 					boolean overLap = rgm.overlapsUnownedRegion(region, lp);
 					if (overLap) 
@@ -198,18 +202,19 @@ public class ListenerClass implements Listener
 					region.setFlags(newFlags);
 					region.setPriority(Main.priority);
 					p.sendMessage(ChatColor.YELLOW + "This area is now protected.");
-/*					
+					
   					try 
 					{
 						rgm.saveChanges();
 						rgm.save();
 					} 
-*/
-					//					catch (StorageException e1) 
-//					{
-//						e1.printStackTrace();
-//					}
-					
+
+					catch (StorageException e1) 
+					{
+						e1.printStackTrace();
+					}
+
+// Force Hiding of block
 //					if(Main.hide)
 //					{
 					b.setType(Material.AIR);
