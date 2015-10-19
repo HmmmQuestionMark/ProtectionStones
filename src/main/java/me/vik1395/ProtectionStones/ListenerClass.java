@@ -201,7 +201,7 @@ public class ListenerClass implements Listener
 	                }
 					region.setFlags(newFlags);
 					region.setPriority(Main.priority);
-					p.sendMessage(ChatColor.YELLOW + "This area is now protected. Blame staff to expand it if needed.");
+					p.sendMessage(ChatColor.RED + "Gebiet gesichert. Für weitere Grundstücke oder Änderungen an bestehenden Grundstücken erstelle ein Ticket.");
 					
   					try 
 					{
@@ -231,7 +231,7 @@ public class ListenerClass implements Listener
 			}
 			else
 			{
-				p.sendMessage(ChatColor.RED + "You can't protect that area.");
+				p.sendMessage(ChatColor.RED + "Gebiet kann nicht gesichert werden. Überschneidung?");
                 e.setCancelled(true);
 			}
 		}
