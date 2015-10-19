@@ -1,7 +1,7 @@
 #Protection Stones Configuration Page
 
 #Specify the block you want to use to protect regions. Use names from https://goo.gl/EBM8w5
-Block: ENDER_STONE
+Block: BEDROCK
 
 #Specify the default flags to be set when a new protected region is created..
 Flags:
@@ -14,6 +14,7 @@ Flags:
 Allowed Flags: use,pvp,greeting,farewell,mob-spawning
 
 #Toggle UUID support for protected regions.
+#Has no real effect. If set to false your computer may explode.
 UUID: true
 
 #Protected Region Configuration
@@ -22,8 +23,9 @@ Region:
   #Set Y to -1 if you want it to protect from sky to bedrock.
   Y Radius: -1
   Z Radius: 20
-  Auto Hide: false
-  No Drop: false
+#Auto Hide also has no real effect. Stone will be hidden anyways.
+  Auto Hide: true
+  No Drop: true
   Block Piston: true
 
 #Set priority of all protected regions.
