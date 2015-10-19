@@ -36,7 +36,7 @@ import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 /*
 
 Author: Vik1395
-Project: VanishBungee
+Project: ProtectionStones
 
 Copyright 2015
 

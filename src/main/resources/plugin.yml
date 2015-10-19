@@ -1,6 +1,6 @@
 name: ProtectionStones
 version: 1.3.2
-description: A greif prevention plugin.
+description: A grief prevention plugin.
 author: Vik1395
 
 depend: [WorldGuard, WorldEdit]
